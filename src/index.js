@@ -4,17 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./app/themes/theme";
-import { SnackbarProvider } from 'notistack';
+import { SnackbarProvider } from "notistack";
+
+import Tmp from "./app/components/tmp";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <Tmp>
       <SnackbarProvider maxSnack={10}>
         <App />
       </SnackbarProvider>
-    </ThemeProvider>
+    </Tmp>
   </React.StrictMode>,
   document.getElementById("root")
 );

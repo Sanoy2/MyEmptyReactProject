@@ -4,8 +4,21 @@ import logo from "../../../logo.svg";
 import "../../../App.css";
 
 import strings from "../../localization/strings";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  primary: {
+    color: theme.palette.primary.main,
+  },
+  secondary: {
+    color: theme.palette.secondary.main,
+  },
+}));
 
 const Home = (props) => {
+  const classes = useStyles();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,6 +27,12 @@ const Home = (props) => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <div>
+          <Button className={classes.primary}>Primary</Button>
+          <Button color="primary">Primary</Button>
+          <Button className={classes.secondary}>Secondary</Button>
+          <Button color="secondary">Secondary</Button>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
