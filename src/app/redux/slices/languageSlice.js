@@ -5,7 +5,7 @@ import strings from '../../localization/strings';
 export const languageSlice = createSlice({
   name: 'language',
   initialState: {
-    availableLanguages: ['eng', 'eng'],
+    availableLanguages: ['eng', 'pl'],
     currentLanguage: '',
   },
   reducers: {
