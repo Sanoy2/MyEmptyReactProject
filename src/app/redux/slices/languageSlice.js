@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import strings from '../../localization/strings';
+
 export const languageSlice = createSlice({
   name: 'language',
   initialState: {
-    availableThemes: ['pl', 'eng'],
+    availableLanguages: ['eng', 'eng'],
     currentLanguage: '',
   },
   reducers: {
@@ -11,7 +13,11 @@ export const languageSlice = createSlice({
       state.currentLanguage = action.payload;
     },
     switchLanguage: (state, action) => {
-      state.currentLanguage = action.payload;
+      const newLanguage = action.payload;
+      if (state.availableLanguages.some((x) => x === newLanguage)) {
+        state.currentLanguage = newLanguage;
+        strings.setLanguage(newLanguage);
+      }
     },
   },
 });
