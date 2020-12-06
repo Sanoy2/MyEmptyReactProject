@@ -6,6 +6,7 @@ import "../../../App.css";
 import strings from "../../localization/strings";
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Counter from "../counter";
 
 const useStyles = makeStyles((theme) => ({
   primary: {
@@ -41,6 +42,7 @@ const Home = (props) => {
         >
           Learn React
         </a>
+        <Counter/>
       </header>
     </div>
   );
