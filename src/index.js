@@ -6,18 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 
 import { SnackbarProvider } from "notistack";
 
-import Tmp from "./app/components/tmp";
 import { Provider } from "react-redux";
 import store from "./app/redux/store";
+import MyThemeProvider from "./app/themes/myThemeProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Tmp>
-        <SnackbarProvider maxSnack={10}>
-          <App />
-        </SnackbarProvider>
-      </Tmp>
+        <MyThemeProvider>
+          <SnackbarProvider maxSnack={10}>
+            <App />
+          </SnackbarProvider>
+        </MyThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
